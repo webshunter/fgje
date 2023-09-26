@@ -1,0 +1,264 @@
+{
+    "data": [
+        {
+            "icon": "fas fa-map-marker",
+            "title": "Sektor",
+            "link": "/sektor"
+        },
+        {
+            "icon": "fas fa-server",
+            "title": "Skill",
+            "link": "/skillnya"
+        },
+        {
+            "icon": "fas fa-globe",
+            "title": "Negara",
+            "link": "/negara"
+        },
+        {
+            "icon": "fas fa-upload",
+            "title": "Calling Visa",
+            "link": "/calling"
+        },
+        {
+            "icon": "fas fa-hammer",
+            "title": "Keterampilan",
+            "link": "/skill2"
+        },
+        {
+            "icon": "fas fa-book",
+            "title": "Pendidikan",
+            "link": "/pendidikan"
+        },
+        {
+            "icon": "fas fa-briefcase",
+            "title": "Jenis Usaha",
+            "link": "/pekerjaanaa"
+        },
+        {
+            "icon": "fas fa-globe",
+            "title": "Negara",
+            "link": "/negara"
+        },
+        {
+            "icon": "fas fa-flag",
+            "title": "Provinsi",
+            "link": "/provinsi"
+        },
+        {
+            "icon": "fas fa-tags",
+            "title": "Posisi",
+            "link": "/posisi"
+        },
+        {
+            "icon": "fas fa-dollar-sign",
+            "title": "Alasan Berhenti Kerja",
+            "link": "/alasan"
+        },
+        {
+            "icon": "fas fa-exclamation-triangle",
+            "title": "Pekerjaan",
+            "link": "/jobs"
+        },
+        {
+            "icon": "fas fa-bookmark",
+            "title": "Agama",
+            "link": "/agama"
+        },
+        {
+            "icon": "fas fa-globe",
+            "title": "Hobi",
+            "link": "/hobi"
+        },
+        {
+            "icon": "fab fa-accessible-icon",
+            "title": "Kondisi Jompo (FI)",
+            "link": "/kondisijompo"
+        },
+        {
+            "icon": "fas fa-eye",
+            "title": "Penglihatan Mata",
+            "link": "/mata"
+        },
+        {
+            "icon": "fas fa-globe",
+            "title": "Lokasi Kerja",
+            "link": "/lokasi"
+        },
+        {
+            "icon": "fas fa-vcard",
+            "title": "Data Bank",
+            "link": "/bank"
+        },
+        {
+            "icon": "fas fa-credit-card2",
+            "title": "Kredit KUR",
+            "link": "/kreditbank"
+        },
+        {
+            "icon": "fas fa-airplane2",
+            "title": "Data Terbang",
+            "link": "/terbang"
+        },
+        {
+            "icon": "fas fa-briefcase3",
+            "title": "Data Jabatan",
+            "link": "/jabatan"
+        },
+        {
+            "icon": "fas fa-plus-circle2",
+            "title": "Data Medical",
+            "link": "/medical"
+        },
+        {
+            "icon": "fas fa-car2",
+            "title": "Asuransi",
+            "link": "/asuransi"
+        },
+        {
+            "icon": "fas fa-diff-renamed",
+            "title": "Nama Asuransi",
+            "link": "/namaasuransi"
+        },
+        {
+            "icon": "fas fa-airplane4",
+            "title": "Airport Saat Kembali",
+            "link": "/airport"
+        },
+        {
+            "icon": "fas fa-archive",
+            "title": "Pilih Dokumen",
+            "link": "/dokdibawa"
+        },
+        {
+            "icon": "fas fa-archive",
+            "title": "Status Pendidikan",
+            "link": "/statuspendidikan"
+        },
+        {
+            "icon": "fas fa-archive",
+            "title": "Kantor Paspor",
+            "link": "/setting_kantorpaspor"
+        },
+        {
+            "icon": "fas fa-archive",
+            "title": "NIK PPTKIS",
+            "link": "/setting_nikpptkis"
+        },
+        {
+            "icon": "fas fa-archive",
+            "title": "VAKSIN",
+            "link": "/setting_vaksin"
+        },
+        {
+            "icon": "fas fa-archive",
+            "title": "HOTEL",
+            "link": "/setting_hotel"
+        },
+        {
+            "icon": "fas fa-people",
+            "title": "SPBG",
+            "link": "/setting_spbg"
+        },
+        {
+            "icon": "fas fa-archive",
+            "title": "Barang Di Produksi",
+            "link": "/setting_barangdiproduksi"
+        },
+        {
+            "icon": "fas fa-users4",
+            "title": "Jaga Anak",
+            "link": "/setjagaanak"
+        },
+        {
+            "icon": "fas fa-notebook",
+            "title": "Keterangan",
+            "link": "/setketerangan"
+        },
+        {
+            "icon": "fas fa-people",
+            "title": "Majikan",
+            "link": "/setmajikan"
+        },
+        {
+            "icon": "fas fa-qrcode",
+            "title": "Nama Disnaker",
+            "link": "/namadisnaker"
+        },
+        {
+            "icon": "fas fa-home4",
+            "title": "Nama Desa",
+            "link": "/namadesa"
+        },
+        {
+            "icon": "fas fa-star-full2",
+            "title": "Nama POLSEK",
+            "link": "/namapolsek"
+        },
+        {
+            "icon": "fas fa-medal-star",
+            "title": "Nama POLRES",
+            "link": "/namapolres"
+        },
+        {
+            "icon": "fas fa-stars",
+            "title": "Nama POLDA",
+            "link": "/namapolda"
+        },
+        {
+            "icon": "fas fa-envelop5",
+            "title": "Nama Surat SKCK",
+            "link": "/namaskck"
+        },
+        {
+            "icon": "fas fa-mirror",
+            "title": "Kantor Imigrasi",
+            "link": "/imigrasi"
+        },
+        {
+            "icon": "fas fa-diamond",
+            "title": "Pilihan Gaji",
+            "link": "/namagaji"
+        },
+        {
+            "icon": "fas fa-statistics",
+            "title": "Pilihan Status TKI",
+            "link": "/namapilstat"
+        },
+        {
+            "icon": "fas fa-github",
+            "title": "Pilihan Hubungan TKI",
+            "link": "/hubungan"
+        },
+        {
+            "icon": "fas fa-select2",
+            "title": "Pilihan LP3TKI",
+            "link": "/namapap"
+        },
+        {
+            "icon": "fas fa-select2",
+            "title": "Setting Data Registrasi",
+            "link": "/setting_dataregistrasi"
+        },
+        {
+            "icon": "fas fa-select2",
+            "title": "Pendidikan",
+            "link": "/setting_pendidikan"
+        },
+        {
+            "icon": "fas fa-user",
+            "title": "User",
+            "link": "/user"
+        },
+        {
+            "icon": "fas fa-sphere",
+            "title": "Website",
+            "link": "/website"
+        },
+        {
+            "icon": "fas fa-address-book",
+            "title": "Address",
+            "link": "/address"
+        }
+    ]
+}

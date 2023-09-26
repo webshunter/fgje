@@ -1,0 +1,158 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
+class Blk_kejadian extends CI_Controller {
+
+	private $table1 = 'blk_kejadian';
+
+	public function __construct()
+	{
+		parent::__construct();
+        //Cek_login::ceklogin();
+		$this->load->model('Createtable');
+		$this->load->model('Datatable_gugus');
+	}
+
+	public function index()
+	{
+        $this->Createtable->location('admin/blk_kejadian/table_show');
+        $this->Createtable->table_name('tableku');
+        $this->Createtable->create_row(["no","idbio","tanggal","kejadian","adm","mark","blk", "action"]);
+        $this->Createtable->order_set('0, 6');
+		$show = $this->Createtable->create();
+
+		$data['datatable'] = $show;
+        $this->load->view('templateadmin/head');
+        $this->load->view('admin/blk_kejadian/view', $data);
+        $this->load->view('templateadmin/footer');
+	}
+
+	public function table_show($action = 'show', $keyword = '')
+	{
+		if ($action == "show") {
+        
+            if (isset($_POST['order'])): $setorder = $_POST['order']; else: $setorder = ''; endif;
+
+            $this->Datatable_gugus->datatable(
+                [
+                    "table" => $this->table1,
+                    "select" => [
+						"*"
+					],
+                    'limit' => [
+                        'start' => post('start'),
+                        'end' => post('length')
+                    ],
+                    'search' => [
+                        'value' => $this->Datatable_gugus->search(),
+                        'row' => ["idbio","tanggal","kejadian","adm","mark","blk"]
+                    ],
+                    'table-draw' => post('draw'),
+                    'table-show' => [
+                        'key' => 'id',
+                        'data' => ["idbio","tanggal","kejadian","adm","mark","blk"]
+                    ],
+                    "action" => "standart",
+                    'order' => [
+                        'order-default' => ['id', 'ASC'],
+                        'order-data' => $setorder,
+                        'order-option' => [ "1"=>"idbio", "2"=>"tanggal", "3"=>"kejadian", "4"=>"adm", "5"=>"mark", "6"=>"blk"],
+                    ],
+                    
+                ]
+            );
+            $this->Datatable_gugus->table_show();
+        }elseif ($action == "update") {
+            $data_row = $this->db->query("SELECT * FROM ".$this->table1." WHERE id = '".$keyword."'")->row();
+            $data['form_data'] = $data_row;
+            $this->load->view('templateadmin/head');
+            $this->load->view('admin/blk_kejadian/edit', $data);
+            $this->load->view('templateadmin/footer');
+        }elseif ($action == "delete") {
+            $hapus_data = $this->db->query("DELETE FROM ".$this->table1." WHERE id = '".post("id")."'");
+        }
+    }
+
+    public function tambah_data()
+    {
+        $this->load->view('templateadmin/head');
+        $this->load->view('admin/blk_kejadian/tambah');
+        $this->load->view('templateadmin/footer');
+    }
+
+
+    public function simpan(){
+        $idbio = post("idbio");
+$tanggal = post("tanggal");
+$kejadian = post("kejadian");
+$adm = post("adm");
+$mark = post("mark");
+$blk = post("blk");
+
+        
+
+        $simpan = $this->db->query("
+            INSERT INTO blk_kejadian
+            (idbio,tanggal,kejadian,adm,mark,blk) VALUES ('$idbio','$tanggal','$kejadian','$adm','$mark','$blk')
+        ");
+    
+
+        if($simpan){
+            redirect('admin/blk_kejadian');
+        }
+    }
+
+    public function update(){
+          $key = post('id'); $idbio = post("idbio");
+$tanggal = post("tanggal");
+$kejadian = post("kejadian");
+$adm = post("adm");
+$mark = post("mark");
+$blk = post("blk");
+
+        $simpan = $this->db->query("
+            UPDATE blk_kejadian SET  idbio = '$idbio', tanggal = '$tanggal', kejadian = '$kejadian', adm = '$adm', mark = '$mark', blk = '$blk' WHERE id = '$key'
+            ");
+    
+
+        if($simpan){
+            redirect('admin/blk_kejadian');
+        }
+    }
+    
+    public function exls(array $data = [], array $headers = [], $fileName = 'data-blk_kejadian.xlsx')
+    {
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $headers = ["no","idbio","tanggal","kejadian","adm","mark","blk", "action"];
+
+        $calldata = ["idbio","tanggal","kejadian","adm","mark","blk"];
+
+        for ($i = 0, $l = sizeof($headers); $i < $l; $i++) {
+            $sheet->setCellValueByColumnAndRow($i + 1, 1, $headers[$i]);
+        }
+        
+        $qr = $this->db->query("SELECT * FROM $this->table1")->result();
+
+        foreach($qr as $i => $vv){
+            $j = 1;
+            $sheet->setCellValueByColumnAndRow(0 + 1, ($i + 1 + 1), $i + 1);
+            foreach ($calldata as $k => $v) { // column $j
+                $sheet->setCellValueByColumnAndRow($j + 1, ($i + 1 + 1), $vv->$v);
+                $j++;
+            }
+        }
+
+        $writer = new Xlsx($spreadsheet);
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment; filename="'. urlencode($fileName).'"');
+        $writer->save('php://output');
+
+    }
+
+
+}
